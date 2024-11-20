@@ -5,7 +5,7 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.Objects;
 
-@Table(name = "TASK", schema = "SYS")
+@Table(name = "TASK")
 public class Task {
 
     private @Id long ID;

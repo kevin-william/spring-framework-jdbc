@@ -2,9 +2,7 @@ package autonomous.controllers;
 
 import autonomous.entities.Task;
 import autonomous.repositories.ITaskRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TaskController {
@@ -21,7 +19,13 @@ public class TaskController {
     }
 
     @PostMapping("/Tasks")
-    Task SaveTask(Task task){
+    Task SaveTask(@RequestBody Task task){
         return taskRepository.save(task);
     }
+
+    @PutMapping("/Tasks")
+    Task UpdateTask(@RequestBody Task task){
+        return taskRepository.save(task);
+    }
+
 }
